@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "18802338004",
+    "project_id": "belal-6e2a9",
+    "storage_bucket": "belal-6e2a9.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:18802338004:android:74cbf5efddfb34ea4a3341",
+        "android_client_info": {
+          "package_name": "com.example.belal_portfolio"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDtANAtPMCVRPS_qtLC-FRIJvlYsv_8p5M"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

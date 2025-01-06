@@ -1,0 +1,27 @@
+{
+  "hosting": {
+    "public": "build/web",                // Set to the directory where Flutter web build output is located
+    "ignore": [
+      "firebase.json",                    // Ignore Firebase config file
+      "**/.*",                             // Ignore dotfiles
+      "**/node_modules/**"                 // Ignore node_modules folder if present
+    ],
+    "rewrites": [
+      {
+        "source": "/**",                   // For single-page apps, all routes will be redirected to index.html
+        "destination": "/index.html"
+      }
+    ],
+    "headers": [
+      {
+        "source": "/**",
+        "headers": [
+          {
+            "key": "Cache-Control",
+            "value": "public, max-age=3600, s-maxage=3600"
+          }
+        ]
+      }
+    ]
+  }
+}
