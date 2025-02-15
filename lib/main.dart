@@ -795,7 +795,7 @@ class ContactPage extends StatelessWidget {
             // Phone
             ListTile(
               leading: Icon(Icons.phone, color: Colors.green),
-              title: Text('01021491813', style: TextStyle(fontSize: 16)),
+              title: Text('+201021491813', style: TextStyle(fontSize: 16)),
               onTap: _launchPhone,
             ),
             Divider(),
