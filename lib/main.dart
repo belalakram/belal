@@ -30,6 +30,14 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    double screenWidth = MediaQuery.of(context).size.width;
+
+    // Adjust the radius and text sizes based on screen size
+    double avatarRadius = screenWidth < 600 ? 65 : 130;
+    double titleFontSize = screenWidth < 600 ? 24 : 28;
+    double subtitleFontSize = screenWidth < 600 ? 16 : 18;
+    double bodyFontSize = screenWidth < 600 ? 14 : 16;
+
     return Scaffold(
       appBar: AppBar(
         title: Text('Belal Akram Portfolio'),
@@ -65,27 +73,27 @@ class HomePage extends StatelessWidget {
                     child: Text(
                       'Welcome to My Portfolio',
                       style: TextStyle(
-                        fontSize: 28,
+                        fontSize: titleFontSize,
                         fontWeight: FontWeight.bold,
                       ),
                     ),
                   ),
                   CircleAvatar(
-                    radius: 130,
+                    radius: avatarRadius,
                     backgroundImage: AssetImage('assets/profile.jpeg'),
                   ),
                   SizedBox(height: 16),
                   Text(
                     'Belal Akram Mohamed Alhajj',
                     style: TextStyle(
-                      fontSize: 24,
+                      fontSize: titleFontSize,
                       fontWeight: FontWeight.bold,
                     ),
                   ),
                   Text(
-                    'IoT Engineer |  Military Service exempted',
+                    'IoT Engineer | Military Service exempted',
                     style: TextStyle(
-                      fontSize: 16,
+                      fontSize: subtitleFontSize,
                       color: Colors.grey,
                     ),
                   ),
@@ -93,9 +101,9 @@ class HomePage extends StatelessWidget {
                   Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 16.0),
                     child: Text(
-                      'I am an IoT Engineer passionate about developing innovative solutions that bridge the gap between hardware and software',
+                      'I am an IoT Engineer passionate about developing innovative solutions that bridge the gap between hardware and software.',
                       textAlign: TextAlign.center,
-                      style: TextStyle(fontSize: 16),
+                      style: TextStyle(fontSize: bodyFontSize),
                     ),
                   ),
                   SizedBox(height: 16),
@@ -131,6 +139,7 @@ class SidebarButton extends StatelessWidget {
     );
   }
 }
+
 
 
 
