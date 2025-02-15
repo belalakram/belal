@@ -73,9 +73,10 @@ class HomePage extends StatelessWidget {
                     backgroundImage: AssetImage('assets/profile.jpeg'),
                   ),
                   Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 30),
+                    padding: const EdgeInsets.symmetric( vertical: 10),
                     child: Text(
-                      'IoT Engineer | Military Service exempted',
+                      'IoT Engineer \n'
+                      'Military Service exempted',
                       style: TextStyle(
                         fontSize: subtitleFontSize,
                         color: Colors.grey,
