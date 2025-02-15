@@ -30,9 +30,6 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    double screenWidth = MediaQuery.of(context).size.width; // Get screen width
-    double avatarSize = screenWidth * 0.25; // Set profile image size as 25% of screen width
-    avatarSize = avatarSize.clamp(80.0, 180.0); // Ensure min 80px and max 180px
     return Scaffold(
       appBar: AppBar(
         title: Text('Belal Akram Portfolio'),
@@ -40,24 +37,23 @@ class HomePage extends StatelessWidget {
       ),
       body: Row(
         children: [
-          // Left Sidebar with buttons (Hidden on small screens)
-          if (screenWidth > 600) // Show sidebar only on larger screens
-            Container(
-              width: 200,
-              color: Colors.blue[50],
-              child: ListView(
-                children: [
-                  SidebarButton('My Projects', ProjectsPage()),
-                  SidebarButton('Education', EducationPage()),
-                  SidebarButton('Certifications', CertificationsPage()),
-                  SidebarButton('Skills', SkillsPage()),
-                  SidebarButton('Experience', ExperiencePage()),
-                  SidebarButton('Achievements', AchievementsPage()),
-                  SidebarButton('Volunteer Work', VolunteerWorkPage()),
-                  SidebarButton('Contact Me', ContactPage()),
-                ],
-              ),
+          // Left Sidebar with buttons
+          Container(
+            width: 200,
+            color: Colors.blue[50],
+            child: ListView(
+              children: [
+                SidebarButton('My Projects', ProjectsPage()),
+                SidebarButton('Education', EducationPage()),
+                SidebarButton('Certifications', CertificationsPage()),
+                SidebarButton('Skills', SkillsPage()),
+                SidebarButton('Experience', ExperiencePage()),
+                SidebarButton('Achievements', AchievementsPage()),
+                SidebarButton('Volunteer Work', VolunteerWorkPage()),
+                SidebarButton('Contact Me', ContactPage()),
+              ],
             ),
+          ),
           // Main Content Area
           Expanded(
             child: SingleChildScrollView(
@@ -75,7 +71,7 @@ class HomePage extends StatelessWidget {
                     ),
                   ),
                   CircleAvatar(
-                    radius: avatarSize, // Responsive avatar size
+                    radius: 140,
                     backgroundImage: AssetImage('assets/profile.jpeg'),
                   ),
                   SizedBox(height: 16),
@@ -87,7 +83,7 @@ class HomePage extends StatelessWidget {
                     ),
                   ),
                   Text(
-                    'IoT Engineer | Military Service Exempted',
+                    'IoT Engineer |  Military Service exempted',
                     style: TextStyle(
                       fontSize: 16,
                       color: Colors.grey,
@@ -97,7 +93,7 @@ class HomePage extends StatelessWidget {
                   Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 16.0),
                     child: Text(
-                      'I am an IoT Engineer passionate about developing innovative solutions that bridge the gap between hardware and software.',
+                      'I am an IoT Engineer passionate about developing innovative solutions that bridge the gap between hardware and software',
                       textAlign: TextAlign.center,
                       style: TextStyle(fontSize: 16),
                     ),
@@ -739,12 +735,37 @@ class VolunteerWorkPage extends StatelessWidget {
     );
   }
 }
+
+
 class ContactPage extends StatelessWidget {
   void _launchURL(String url) async {
-    if (await canLaunch(url)) {
-      await launch(url);
+    Uri uri = Uri.parse(url);
+    if (await canLaunchUrl(uri)) {
+      await launchUrl(uri, mode: LaunchMode.externalApplication);
     } else {
       throw 'Could not launch $url';
+    }
+  }
+
+  void _launchEmail() async {
+    final Uri emailUri = Uri(
+      scheme: 'mailto',
+      path: 'Belal.Akram502@gmail.com',
+      query: 'subject=Contact&body=Hello, Belal!',
+    );
+    if (await canLaunchUrl(emailUri)) {
+      await launchUrl(emailUri);
+    } else {
+      throw 'Could not launch Email';
+    }
+  }
+
+  void _launchPhone() async {
+    final Uri phoneUri = Uri(scheme: 'tel', path: '01021491813');
+    if (await canLaunchUrl(phoneUri)) {
+      await launchUrl(phoneUri);
+    } else {
+      throw 'Could not launch Phone';
     }
   }
 
@@ -758,19 +779,57 @@ class ContactPage extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
-              'Email: Belal.Akram502@gmail.com\n'
-                  'Phone: 01021491813\n'
-                  'Location: Banha, Egypt\n',
-              style: TextStyle(fontSize: 16),
+              'Get in Touch!',
+              style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
             ),
-            ElevatedButton(
+            SizedBox(height: 16),
+
+            // Email
+            ListTile(
+              leading: Icon(Icons.email, color: Colors.blue),
+              title: Text('Belal.Akram502@gmail.com', style: TextStyle(fontSize: 16)),
+              onTap: _launchEmail,
+            ),
+            Divider(),
+
+            // Phone
+            ListTile(
+              leading: Icon(Icons.phone, color: Colors.green),
+              title: Text('01021491813', style: TextStyle(fontSize: 16)),
+              onTap: _launchPhone,
+            ),
+            Divider(),
+
+            // Location
+            ListTile(
+              leading: Icon(Icons.location_on, color: Colors.red),
+              title: Text('Banha, Egypt', style: TextStyle(fontSize: 16)),
+            ),
+            Divider(),
+
+            SizedBox(height: 20),
+
+            // LinkedIn Button
+            ElevatedButton.icon(
+              style: ElevatedButton.styleFrom(
+                backgroundColor: Colors.blueAccent,
+                minimumSize: Size(double.infinity, 50),
+              ),
+              icon: Icon(Icons.business, color: Colors.white),
+              label: Text('Visit LinkedIn', style: TextStyle(color: Colors.white)),
               onPressed: () => _launchURL('https://linkedin.com/in/belalakram'),
-              child: Text('Visit LinkedIn'),
             ),
             SizedBox(height: 10),
-            ElevatedButton(
+
+            // GitHub Button
+            ElevatedButton.icon(
+              style: ElevatedButton.styleFrom(
+                backgroundColor: Colors.black,
+                minimumSize: Size(double.infinity, 50),
+              ),
+              icon: Icon(Icons.code, color: Colors.white),
+              label: Text('Visit GitHub', style: TextStyle(color: Colors.white)),
               onPressed: () => _launchURL('https://github.com/belalakram'),
-              child: Text('Visit GitHub'),
             ),
           ],
         ),
