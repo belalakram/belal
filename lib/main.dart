@@ -47,7 +47,7 @@ class HomePage extends StatelessWidget {
         children: [
           // Left Sidebar with buttons
           Container(
-            width: 140,
+            width: 145,
             color: Colors.blue[50],
             child: ListView(
               children: [
@@ -82,24 +82,19 @@ class HomePage extends StatelessWidget {
                     radius: avatarRadius,
                     backgroundImage: AssetImage('assets/profile.jpeg'),
                   ),
-                  SizedBox(height: 16),
-                  Text(
-                    'Belal Akram Mohamed Alhajj',
-                    style: TextStyle(
-                      fontSize: titleFontSize,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                  Text(
-                    'IoT Engineer | Military Service exempted',
-                    style: TextStyle(
-                      fontSize: subtitleFontSize,
-                      color: Colors.grey,
+                  Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 30),
+                    child: Text(
+                      'IoT Engineer | Military Service exempted',
+                      style: TextStyle(
+                        fontSize: subtitleFontSize,
+                        color: Colors.grey,
+                      ),
                     ),
                   ),
                   SizedBox(height: 16),
                   Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 16.0),
+                    padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 30),
                     child: Text(
                       'I am an IoT Engineer passionate about developing innovative solutions that bridge the gap between hardware and software.',
                       textAlign: TextAlign.center,
