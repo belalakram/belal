@@ -71,7 +71,7 @@ class HomePage extends StatelessWidget {
                     ),
                   ),
                   CircleAvatar(
-                    radius: 140,
+                    radius: 130,
                     backgroundImage: AssetImage('assets/profile.jpeg'),
                   ),
                   SizedBox(height: 16),
