@@ -582,10 +582,11 @@ class ExperiencePage extends StatelessWidget {
 
 class AchievementsPage extends StatelessWidget {
   final List<String> achievements = [
-    "Led IoT-based energy management project",
-    "Published research paper on IoT applications",
-    "Won MIE competition for innovative projects",
-    "Received financial support from ITIDA to develop and implement this project",
+    "Received financial support from ITIDA for the development and implementation of my Graduation Project. ",
+    "Ranked in the Top 20 of the MIE Competition for innovative projects related to my Graduation Project.",
+    "Published a research paper on the IoT applications of my Graduation Project at the 18th Undergraduate Research Forum.",
+    "I got 1st place in boxing at the governorate level.",
+    "I got 3rd place in CrossFit at the university level.",
   ];
 
   @override
