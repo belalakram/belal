@@ -39,7 +39,7 @@ class HomePage extends StatelessWidget {
         children: [
           // Left Sidebar with buttons
           Container(
-            width: 200,
+            width: 140,
             color: Colors.blue[50],
             child: ListView(
               children: [
@@ -49,7 +49,7 @@ class HomePage extends StatelessWidget {
                 SidebarButton('Skills', SkillsPage()),
                 SidebarButton('Experience', ExperiencePage()),
                 SidebarButton('Achievements', AchievementsPage()),
-                SidebarButton('Volunteer Work', VolunteerWorkPage()),
+                SidebarButton('Volunteering', VolunteerWorkPage()),
                 SidebarButton('Contact Me', ContactPage()),
               ],
             ),
@@ -61,7 +61,7 @@ class HomePage extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 50),
+                    padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 30),
                     child: Text(
                       'Welcome to My Portfolio',
                       style: TextStyle(
