@@ -30,6 +30,9 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    double screenWidth = MediaQuery.of(context).size.width; // Get screen width
+    double avatarSize = screenWidth * 0.25; // Set profile image size as 25% of screen width
+    avatarSize = avatarSize.clamp(80.0, 180.0); // Ensure min 80px and max 180px
     return Scaffold(
       appBar: AppBar(
         title: Text('Belal Akram Portfolio'),
@@ -37,23 +40,24 @@ class HomePage extends StatelessWidget {
       ),
       body: Row(
         children: [
-          // Left Sidebar with buttons
-          Container(
-            width: 200,
-            color: Colors.blue[50],
-            child: ListView(
-              children: [
-                SidebarButton('My Projects', ProjectsPage()),
-                SidebarButton('Education', EducationPage()),
-                SidebarButton('Certifications', CertificationsPage()),
-                SidebarButton('Skills', SkillsPage()),
-                SidebarButton('Experience', ExperiencePage()),
-                SidebarButton('Achievements', AchievementsPage()),
-                SidebarButton('Volunteer Work', VolunteerWorkPage()),
-                SidebarButton('Contact Me', ContactPage()),
-              ],
+          // Left Sidebar with buttons (Hidden on small screens)
+          if (screenWidth > 600) // Show sidebar only on larger screens
+            Container(
+              width: 200,
+              color: Colors.blue[50],
+              child: ListView(
+                children: [
+                  SidebarButton('My Projects', ProjectsPage()),
+                  SidebarButton('Education', EducationPage()),
+                  SidebarButton('Certifications', CertificationsPage()),
+                  SidebarButton('Skills', SkillsPage()),
+                  SidebarButton('Experience', ExperiencePage()),
+                  SidebarButton('Achievements', AchievementsPage()),
+                  SidebarButton('Volunteer Work', VolunteerWorkPage()),
+                  SidebarButton('Contact Me', ContactPage()),
+                ],
+              ),
             ),
-          ),
           // Main Content Area
           Expanded(
             child: SingleChildScrollView(
@@ -71,7 +75,7 @@ class HomePage extends StatelessWidget {
                     ),
                   ),
                   CircleAvatar(
-                    radius: 180,
+                    radius: avatarSize, // Responsive avatar size
                     backgroundImage: AssetImage('assets/profile.jpeg'),
                   ),
                   SizedBox(height: 16),
@@ -83,7 +87,7 @@ class HomePage extends StatelessWidget {
                     ),
                   ),
                   Text(
-                    'IoT Engineer |  Military Service exempted',
+                    'IoT Engineer | Military Service Exempted',
                     style: TextStyle(
                       fontSize: 16,
                       color: Colors.grey,
@@ -93,7 +97,7 @@ class HomePage extends StatelessWidget {
                   Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 16.0),
                     child: Text(
-                      'I am an IoT Engineer passionate about developing innovative solutions that bridge the gap between hardware and software',
+                      'I am an IoT Engineer passionate about developing innovative solutions that bridge the gap between hardware and software.',
                       textAlign: TextAlign.center,
                       style: TextStyle(fontSize: 16),
                     ),
