@@ -68,22 +68,12 @@ class HomePage extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-                  Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 30),
-                    child: Text(
-                      'Welcome to My Portfolio',
-                      style: TextStyle(
-                        fontSize: titleFontSize,
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ),
-                  ),
                   CircleAvatar(
                     radius: avatarRadius,
                     backgroundImage: AssetImage('assets/profile.jpeg'),
                   ),
                   Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 30),
+                    padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 30),
                     child: Text(
                       'IoT Engineer | Military Service exempted',
                       style: TextStyle(
