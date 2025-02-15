@@ -441,7 +441,7 @@ class SkillsPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: Text('Skills')),
-      body: Padding(
+      body: SingleChildScrollView( // Make the body scrollable
         padding: const EdgeInsets.all(16.0),
         child: Wrap(
           spacing: 8.0, // Horizontal spacing between chips
@@ -457,7 +457,6 @@ class SkillsPage extends StatelessWidget {
     );
   }
 }
-
 
 class ExperiencePage extends StatelessWidget {
   final List<Map<String, String>> experiences = [
