@@ -341,6 +341,14 @@ class CertificationsPage extends StatelessWidget {
       'title': 'Data Fundamentals Challenge',
       'image': 'assets/data.png', // Replace with your image path
     },
+    {
+      'title': 'Mobile Application Development (CodeAlpha)',
+      'image': 'assets/mob.jpeg',
+    },
+    {
+      'title': 'Web Development (NeuronetiX)',
+      'image': 'assets/web.jpeg', // Replace with your image path
+    },
   ];
 
   @override
