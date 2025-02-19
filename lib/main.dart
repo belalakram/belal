@@ -426,6 +426,8 @@ class SkillsPage extends StatelessWidget {
     'Problem Solving',
     'Team Work',
     'Git',
+    'linux',
+    'Electronic Design Automation (EDA)',
     'Bash',
     'Python',
     'Dart',
@@ -435,6 +437,7 @@ class SkillsPage extends StatelessWidget {
     'Circuit Maker',
     'C',
     'C++',
+    'Microwind',
     'Communications',
     'Electronics',
     'Matlab',
@@ -472,8 +475,8 @@ class ExperiencePage extends StatelessWidget {
     {
       "title": "Teaching Assistant",
       "company": "Future University in Egypt",
-      "type": "Full-time",
-      "duration": "Jan 2025 - Present ",
+      "type": "Part-time",
+      "duration": "Sep 2024 - Present ",
       "location": "On-site"
     },
     {
