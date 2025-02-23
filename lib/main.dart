@@ -428,6 +428,7 @@ class SkillsPage extends StatelessWidget {
     'Git',
     'linux',
     'Electronic Design Automation (EDA)',
+    'LTspice',
     'Bash',
     'Python',
     'Dart',
