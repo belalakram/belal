@@ -471,76 +471,86 @@ class SkillsPage extends StatelessWidget {
   }
 }
 
+
 class ExperiencePage extends StatelessWidget {
   final List<Map<String, String>> experiences = [
     {
       "title": "Teaching Assistant",
       "company": "Future University in Egypt",
       "type": "Part-time",
-      "duration": "Sep 2024 - Present ",
+      "duration": "Sep 2024 - Present · 8 months",
       "location": "On-site"
+    },
+    {
+      "title": "Data Analyst",
+      "company": "Freelance",
+      "duration": "Dec 2024 - Present · 5 months",
+      "location": "Remote",
+      "skills": "Statistical Analysis · Proposal Writing · Microsoft Excel · Microsoft Power BI · Data Analysis · Statistical Data Analysis · Exploratory Data Analysis · SQL"
+    },
+    {
+      "title": "IoT Engineer",
+      "company": "Freelance",
+      "duration": "Jan 2022 - Present · 3 years 4 months",
+      "location": "Hybrid",
+      "skills": "IoT · AI · Embedded Systems · Embedded Linux · Sensors · IT Integration · Data Integration · Flutter · Dart · Firebase · GCP"
     },
     {
       "title": "Data Analyst",
       "company": "Digital Egypt Pioneers Initiative - DEPI",
       "type": "Internship",
-      "duration": "Oct 2024 - Present ",
+      "duration": "Oct 2024 - Apr 2025 · 7 months",
       "location": "Hybrid",
-      "skills": "Microsoft Excel, Power BI, SQL, Statistical Analysis, Azure"
-    },
-    {
-      "title": "Data Analyst",
-      "company": "Freelance",
-      "duration": "Dec 2024 - Present ",
-      "location": "Remote",
-      "skills": "SQL, Power BI, Data Analysis"
-    },
-    {
-      "title": "IoT Engineer",
-      "company": "Freelance",
-      "duration": "Jan 2022 - Present ",
-      "location": "Hybrid",
-      "skills": "IoT, AI, Embedded Systems, Flutter, Firebase, GCP"
+      "skills": "Microsoft Excel · Microsoft Power BI · Soft Skills · SQL · Statistical Analysis · Microsoft Azure · Azure SQL"
     },
     {
       "title": "Mobile Application Developer (Flutter)",
       "company": "Mentor Academy Learning",
       "type": "Internship",
-      "duration": "Sep 2024 - Jan 2025 · 5 mos",
+      "duration": "Sep 2024 - Jan 2025 · 5 months",
       "location": "Hybrid",
-      "skills": "Flutter, Firebase, Dart"
+      "skills": "Flutter Application Development · Teamwork · Firebase · Dart"
+    },
+    {
+      "title": "Sales Engineer",
+      "company": "Dr. Akram Al-Hajj Pharmacy",
+      "duration": "Aug 2020 - Jan 2025 · 4 years 6 months",
+      "location": "On-site",
+      "skills": "Inventory Management · Customer Satisfaction"
     },
     {
       "title": "Mobile Application Developer Intern",
       "company": "CodeAlpha",
       "type": "Internship",
-      "duration": "Aug 2024 - Oct 2024 · 3 mos",
+      "duration": "Aug 2024 - Oct 2024 · 3 months",
       "location": "Remote",
-      "skills": "Flutter, Firebase, Mobile App Development"
+      "skills": "Flutter · Firebase · Mobile App Development"
     },
     {
       "title": "Web Development Intern",
       "company": "NeuronetiX",
       "type": "Internship",
-      "duration": "Aug 2024 - Oct 2024 · 3 mos",
+      "duration": "Aug 2024 - Oct 2024 · 3 months",
       "location": "Remote",
-      "skills": "Web Development, Frontend Development"
+      "skills": "Web Development · Frontend Development"
+    },
+    {
+      "title": "Graduation Project",
+      "company": "Information Technology Industry Development Agency, ITIDA",
+      "duration": "Nov 2023 - Jul 2024 · 9 months",
+      "location": "Egypt",
+      "skills": "Energy Harvesting · IoT · Smart Energy Systems",
+      "description": "Energy Harvesting for Floating Smart City sponsored by ITIDA"
     },
     {
       "title": "Artificial Intelligence and IoT Intern",
       "company": "National Telecommunication Institute (NTI)",
       "type": "Internship",
-      "duration": "Apr 2023 - Jul 2023 · 4 mos",
+      "duration": "Apr 2023 - Jul 2023 · 4 months",
       "location": "Hybrid",
-      "skills": "Artificial Intelligence (AI), Internet of Things (IoT)"
+      "skills": "AI · IoT"
     },
-    {
-      "title": "Sales Engineer",
-      "company": "Dr. Akram Al-Hajj Pharmacy",
-      "duration": "Aug 2020 - Jan 2025 · 4 yrs 6 mos",
-      "location": "On-site",
-      "skills": "Inventory Management, Customer Satisfaction"
-    },
+
   ];
 
   final List<String> certifications = [
@@ -571,6 +581,7 @@ class ExperiencePage extends StatelessWidget {
                     Text(experience["duration"]!),
                     if (experience.containsKey("location")) Text("📍 ${experience["location"]!}"),
                     if (experience.containsKey("skills")) Text("🛠 Skills: ${experience["skills"]!}"),
+                    if (experience.containsKey("description")) Text("📌 ${experience["description"]!}")
                   ],
                 ),
               ),
