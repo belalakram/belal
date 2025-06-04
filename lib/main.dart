@@ -167,6 +167,11 @@ class ProjectsPage extends StatelessWidget {
       'description': 'Developed an HR analytics dashboard to monitor employee attrition trends.',
       'url': 'https://www.linkedin.com/posts/belalakram_dataanalytics-hranalytics-employeeattrition-activity-7290060556491788290-FkjC?utm_source=share&utm_medium=member_desktop&rcm=ACoAAD3jCwYBQZMWMA8w9yFpihpbej2qfCHag-g'
     },
+    {
+      'title': 'India Air Quality Analysis – Graduation Project (DEPI Data Analysis Track)',
+      'description': '•	Delivered a compelling environmental data story to raise public health awareness.',
+      'url': 'https://github.com/belalakram/Environmental-analysis-of-air-pollutants-to-indicate-Air-Quality-in-India-2018-2022--main'
+    },
   ];
 
   void _launchURL(String url) async {
